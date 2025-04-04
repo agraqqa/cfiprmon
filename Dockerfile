@@ -4,7 +4,7 @@ COPY . .
 
 RUN cd app && \
     CGO_ENABLED=0 go mod download && \
-    CGO_ENABLED=0 go build -o /app &&
+    CGO_ENABLED=0 go build -o /app
 
 FROM alpine:latest
 COPY --from=builder /app /app
